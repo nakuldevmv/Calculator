@@ -1,7 +1,10 @@
 import 'dart:ffi';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:getxapptest/styles/customContainer.dart';
 import 'package:getxapptest/styles/customContainer.dart';
 
@@ -13,6 +16,8 @@ class calculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CustomContainerController controller = Get.put(CustomContainerController());
+
     //container height
 
     return Scaffold(
@@ -95,99 +100,101 @@ class calculator extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            // controller.getValue("7");
+                            controller.changeElevation();
                           },
-                          child: const CustomContainer(
-                            child: Center(
+                          child: CustomContainer(
+                            isElevated: controller.elevated,
+                            child: const Center(
                               child: Text(
                                 "7",
                                 style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.normal,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            // controller.getValue("8");
-                          },
-                          child: const CustomContainer(
-                            child: Center(
-                              child: Text(
-                                "8",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            // controller.getValue("9");
-                          },
-                          child: const CustomContainer(
-                            child: Center(
-                              child: Text(
-                                "9",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            // controller.getValue("7");
-                          },
-                          child: const CustomContainer(
-                            child: Center(
-                              child: Text(
-                                "7",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            // controller.getValue("8");
-                          },
-                          child: const CustomContainer(
-                            child: Center(
-                              child: Text(
-                                "8",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            // controller.getValue("9");
-                          },
-                          child: const CustomContainer(
-                            child: Center(
-                              child: Text(
-                                "9",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                          ),
-                        ),
+                        //     InkWell(
+                        //       onTap: () {
+                        //         // controller.getValue("8");
+                        //       },
+                        //       child: const CustomContainer(
+                        //         child: Center(
+                        //           child: Text(
+                        //             "8",
+                        //             style: TextStyle(
+                        //                 fontSize: 32,
+                        //                 fontWeight: FontWeight.normal),
+                        //           ),
+                        //         ),
+                        //       ),
+                        //     ),
+                        //     InkWell(
+                        //       onTap: () {
+                        //         // controller.getValue("9");
+                        //       },
+                        //       child: const CustomContainer(
+                        //         child: Center(
+                        //           child: Text(
+                        //             "9",
+                        //             style: TextStyle(
+                        //                 fontSize: 32,
+                        //                 fontWeight: FontWeight.normal),
+                        //           ),
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        //   children: [
+                        //     InkWell(
+                        //       onTap: () {
+                        //         // controller.getValue("7");
+                        //       },
+                        //       child: const CustomContainer(
+                        //         child: Center(
+                        //           child: Text(
+                        //             "7",
+                        //             style: TextStyle(
+                        //                 fontSize: 32,
+                        //                 fontWeight: FontWeight.normal),
+                        //           ),
+                        //         ),
+                        //       ),
+                        //     ),
+                        //     InkWell(
+                        //       onTap: () {
+                        //         // controller.getValue("8");
+                        //       },
+                        //       child: const CustomContainer(
+                        //         child: Center(
+                        //           child: Text(
+                        //             "8",
+                        //             style: TextStyle(
+                        //                 fontSize: 32,
+                        //                 fontWeight: FontWeight.normal),
+                        //           ),
+                        //         ),
+                        //       ),
+                        //     ),
+                        //     InkWell(
+                        //       onTap: () {
+                        //         // controller.getValue("9");
+                        //       },
+                        //       child: const CustomContainer(
+                        //         child: Center(
+                        //           child: Text(
+                        //       "9",
+                        //       style: TextStyle(
+                        //           fontSize: 32,
+                        //           fontWeight: FontWeight.normal),
+                        //     ),
+                        //   ),
+                        // ),
+                        // ),
                       ],
                     ),
                   ],
