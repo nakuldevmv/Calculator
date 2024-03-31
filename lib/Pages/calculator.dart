@@ -1,6 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:getxapptest/Controllers/controlers.dart';
 import 'package:getxapptest/styles/customContainer.dart';
+import 'package:getxapptest/styles/neumorphic_button.dart';
 
 // ignore: camel_case_types
 class calculator extends StatelessWidget {
@@ -8,7 +14,8 @@ class calculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //container height
+    final controller = Get.put(CustomContainer);
+    Get.put(AnimatedController());
 
     return Scaffold(
       body: Column(
@@ -82,37 +89,30 @@ class calculator extends StatelessWidget {
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25))),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    const CustomContainerBox(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text("data"),
+                          Text("data"),
+                          Text("data"),
+                        ],
+                      ),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        InkWell(
-                          onTap: () {
-                            // controller.getValue("7");
-                          },
-                          child: CustomContainer(
-                            h: 75,
-                            w: 75,
-                            child: const Center(
-                              child: Text(
-                                "7",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
+                        GestureDetector(
                           onTap: () {
                             // controller.getValue("8");
                           },
-                          child: CustomContainer(
-                            h: 75,
-                            w: 75,
-                            child: const Center(
+                          child: const CustomContainer(
+                            child: Center(
                               child: Text(
                                 "8",
                                 style: TextStyle(
@@ -122,26 +122,101 @@ class calculator extends StatelessWidget {
                             ),
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            // controller.getValue("9");
-                          },
-                          child: CustomContainer(
-                            h: 7,
-                            w: 7,
-                            child: const Center(
-                              child: Text(
-                                "9",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
+                        CustomAnimatedContainer(
+                          child: const Text(
+                            "data",
+                            style: TextStyleClass.style,
                           ),
                         ),
+
+                        // InkWell(
+                        //   onTap: () {
+                        //     // controller.getValue("9");
+                        //   },
+                        //   child: CustomContainer(
+                        //     h: 7,
+                        //     w: 7,
+                        //     child: const Center(
+                        //       child: Text(
+                        //         "9",
+                        //         style: TextStyle(
+                        //             fontSize: 32,
+                        //             fontWeight: FontWeight.normal),
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ],
+                ),
+                CustomContainerBox2(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 88,
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: const Color.fromARGB(0, 0, 0, 0)),
+                        child: const Center(
+                          child: Text(
+                            "÷",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 88,
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: const Color.fromARGB(0, 0, 0, 0)),
+                        child: const Center(
+                            child: Text(
+                          "×",
+                          style: TextStyleClass.style,
+                        )),
+                      ),
+                      Container(
+                        height: 88,
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: const Color.fromARGB(0, 0, 0, 0)),
+                        child: const Center(
+                            child: Text(
+                          "-",
+                          style: TextStyleClass.style,
+                        )),
+                      ),
+                      Container(
+                        height: 88,
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: const Color.fromARGB(0, 0, 0, 0)),
+                        child: const Center(
+                            child: Text(
+                          "+",
+                          style: TextStyleClass.style,
+                        )),
+                      ),
+                      Container(
+                        height: 88,
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: const Color.fromARGB(104, 1, 5, 7)),
+                        child: const Center(
+                            child: Text(
+                          "=",
+                          style: TextStyleClass.style,
+                        )),
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
