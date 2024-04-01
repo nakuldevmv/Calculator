@@ -138,3 +138,12 @@ class TextStyleClass {
     fontWeight: FontWeight.normal,
   );
 }
+
+class ElevatedButtonStyle {
+  static ButtonStyle btnstyle = ElevatedButton.styleFrom(
+      minimumSize: const Size(74, 74),
+      backgroundColor: Colors.amber,
+      foregroundColor: Colors.blue,
+      shadowColor: Colors.amberAccent,
+      elevation: 20);
+}

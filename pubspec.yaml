@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   function_tree: ^0.9.1
   get: ^4.6.6
+  flutter_neumorphic: ^3.2.0
 
 dev_dependencies:
   flutter_test:

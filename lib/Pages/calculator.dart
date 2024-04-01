@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -107,6 +108,18 @@ class calculator extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        // NeumorphicButton(
+                        //   onPressed: () {},
+                        //   child: const Text("data"),
+                        // ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {},
+                          child: const Text(
+                            "8",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
                         GestureDetector(
                           onTap: () {
                             // controller.getValue("8");
@@ -120,12 +133,6 @@ class calculator extends StatelessWidget {
                                     fontWeight: FontWeight.normal),
                               ),
                             ),
-                          ),
-                        ),
-                        CustomAnimatedContainer(
-                          child: const Text(
-                            "data",
-                            style: TextStyleClass.style,
                           ),
                         ),
 
