@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -15,20 +14,14 @@ class calculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CustomContainer);
+    // final controller = Get.put(CustomContainer);
     Get.put(AnimatedController());
 
     return Scaffold(
+      backgroundColor: const Color(0xff333333),
       body: Column(
         children: [
-          Container(
-            margin: const EdgeInsets.only(top: 46, left: 18, right: 18),
-            height: 296,
-            width: 394,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: const Color(0xFF194664),
-            ),
+          mainscreen(
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
@@ -99,60 +92,191 @@ class calculator extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text("data"),
-                          Text("data"),
-                          Text("data"),
+                          Text(
+                            "AC",
+                            style: TextStyleClass.style,
+                          ),
+                          Text(
+                            "-/+",
+                            style: TextStyleClass.style,
+                          ),
+                          Text(
+                            "%",
+                            style: TextStyleClass.style,
+                          ),
                         ],
                       ),
                     ),
+                    const SizedBox(
+                      height: 14,
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        // NeumorphicButton(
-                        //   onPressed: () {},
-                        //   child: const Text("data"),
-                        // ),
+                        const SizedBox(
+                          width: 22,
+                        ),
                         ElevatedButton(
                           style: ElevatedButtonStyle.btnstyle,
-                          onPressed: () {},
+                          onPressed: () {
+                            // controller.getValue("7");
+                          },
+                          child: const Text(
+                            "7",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("8");
+                          },
                           child: const Text(
                             "8",
                             style: TextStyleClass.style,
                           ),
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            // controller.getValue("8");
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("9");
                           },
-                          child: const CustomContainer(
-                            child: Center(
-                              child: Text(
-                                "8",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
+                          child: const Text(
+                            "9",
+                            style: TextStyleClass.style,
                           ),
                         ),
-
-                        // InkWell(
-                        //   onTap: () {
-                        //     // controller.getValue("9");
-                        //   },
-                        //   child: CustomContainer(
-                        //     h: 7,
-                        //     w: 7,
-                        //     child: const Center(
-                        //       child: Text(
-                        //         "9",
-                        //         style: TextStyle(
-                        //             fontSize: 32,
-                        //             fontWeight: FontWeight.normal),
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("4");
+                          },
+                          child: const Text(
+                            "4",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("5");
+                          },
+                          child: const Text(
+                            "5",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("6");
+                          },
+                          child: const Text(
+                            "6",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("7");
+                          },
+                          child: const Text(
+                            "1",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("8");
+                          },
+                          child: const Text(
+                            "2",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("9");
+                          },
+                          child: const Text(
+                            "3",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle0,
+                          onPressed: () {
+                            // controller.getValue("8");
+                          },
+                          child: const Text(
+                            "0",
+                            textAlign: TextAlign.left,
+                            style: TextStyleClass.style,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 22,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButtonStyle.btnstyle,
+                          onPressed: () {
+                            // controller.getValue("9");
+                          },
+                          child: const Text(
+                            ".",
+                            style: TextStyleClass.style,
+                          ),
+                        ),
                       ],
                     ),
                   ],
