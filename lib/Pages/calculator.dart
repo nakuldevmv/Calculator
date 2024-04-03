@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/routes/get_transition_mixin.dart';
 import 'package:getxapptest/Controllers/controlers.dart';
 import 'package:getxapptest/styles/customContainer.dart';
-import 'package:getxapptest/styles/neumorphic_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // ignore: camel_case_types
