@@ -53,7 +53,7 @@ class calculator extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Container(
-                            color: Colors.black,
+                            color: Colors.transparent,
                             child: Text(
                               controller.h.toString(),
                               style: const TextStyle(fontSize: 22),
