@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:get/get_navigation/src/routes/get_transition_mixin.dart';
 import 'package:getxapptest/Controllers/controlers.dart';
 import 'package:getxapptest/styles/customContainer.dart';
+import 'package:getxapptest/styles/neumorphic_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // ignore: camel_case_types
@@ -27,71 +29,63 @@ class calculator extends StatelessWidget {
             builder: (getanswer) {
               return mainscreen(
                 isValue: controller.isValue,
-                //   child: Stack(
-                //     alignment: Alignment.bottomCenter,
-                //     children: [
-                //       // Positioned(
-                //       //   top: 25,
-                //       //   left: 25,
-                //       //   child: InkWell(
-                //       //       onTap: () {
-                //       //         controller.screenUp();
-                //       //       },
-                //       //       child: const Icon(
-                //       //         Icons.menu,
-                //       //         size: 30,
-                //       //       )),
-                //       // ),
-                //       Container(
-                //         height: 115,
-                //         width: 375,
-                //         padding: const EdgeInsets.only(
-                //             left: 40, right: 40, bottom: 10),
-                //         // color: const Color.fromARGB(66, 244, 67, 54),
-                //         child: Column(
-                //           mainAxisAlignment: MainAxisAlignment.end,
-                //           crossAxisAlignment: CrossAxisAlignment.end,
-                //           children: [
-                //             Container(
-                //               color: Colors.transparent,
-                //               child: Text(
-                //                 controller.h.toString(),
-                //                 style: const TextStyle(fontSize: 22),
-                //               ),
-                //             ),
-                //             const SizedBox(
-                //               height: 5,
-                //             ),
-                //             Row(
-                //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //               children: [
-                //                 const Text(
-                //                   "=",
-                //                   style: TextStyle(fontSize: 40),
-                //                 ),
-                //                 SizedBox(
-                //                   width: 200,
-                //                   child: Text(
-                //                     textAlign: TextAlign.right,
-                //                     overflow: TextOverflow.ellipsis,
-                //                     controller.v.toString(),
-                //                     style: const TextStyle(fontSize: 40),
-                //                   ),
-                //                 ),
-                //               ],
-                //             )
-                //           ],
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-
-                child: const Column(
-                  children: [
-                    Row(
-                      children: [],
-                    )
-                  ],
+                child: Container(
+                  height: 115,
+                  width: 375,
+                  padding:
+                      const EdgeInsets.only(left: 40, right: 40, bottom: 10),
+                  // color: const Color.fromARGB(66, 244, 67, 54),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        color: Colors.transparent,
+                        child: Text(
+                          controller.h.toString(),
+                          style: const TextStyle(fontSize: 22),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      AnimatedContainer(
+                        duration: const Duration(milliseconds: 2000),
+                        child: Divider(
+                          color: controller.isValue != true
+                              ? const Color(0xff333333)
+                              : const Color.fromARGB(126, 255, 255, 255),
+                          height: controller.isValue != true ? 0 : 5,
+                          thickness: 0.5,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          controller.showAns();
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "=",
+                              style: TextStyle(fontSize: 40),
+                            ),
+                            SizedBox(
+                              width: 273,
+                              child: Text(
+                                textAlign: TextAlign.right,
+                                overflow: controller.AnsTF
+                                    ? TextOverflow.visible
+                                    : TextOverflow.ellipsis,
+                                controller.v.toString(),
+                                style: const TextStyle(fontSize: 40),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               );
             },

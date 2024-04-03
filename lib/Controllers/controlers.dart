@@ -83,7 +83,12 @@ class TapResult extends GetxController {
   bool isValue = false;
   void screenUp() {
     isValue = true;
-    print(isValue);
+    update();
+  }
+
+  bool AnsTF = false;
+  void showAns() {
+    AnsTF = !AnsTF;
     update();
   }
 }
