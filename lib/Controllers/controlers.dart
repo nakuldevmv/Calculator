@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:get/get.dart';
 import 'package:function_tree/function_tree.dart';
 
@@ -85,6 +87,7 @@ class TapResult extends GetxController {
     update();
   }
 
+  // ignore: non_constant_identifier_names
   bool AnsTF = false;
   void showAns() {
     AnsTF = !AnsTF;

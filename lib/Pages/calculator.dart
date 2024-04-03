@@ -425,318 +425,314 @@ class calculator extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      // color: const Color.fromARGB(67, 255, 193, 7),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              CustomContainerBox(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    ElevatedButton(
-                                      style: ElevatedButtonStyle.operatorStyle,
-                                      onPressed: () {
-                                        controller.clear();
-                                      },
-                                      child: const Text(
-                                        "AC",
-                                        style: TextStyleClass.style,
-                                      ),
-                                    ),
-                                    ElevatedButton(
-                                      style: ElevatedButtonStyle.operatorStyle,
-                                      onPressed: () {
-                                        controller.backspace();
-                                      },
-                                      child: const Text(
-                                        "C",
-                                        style: TextStyleClass.style,
-                                      ),
-                                    ),
-                                    ElevatedButton(
-                                      style: ElevatedButtonStyle.operatorStyle,
-                                      onPressed: () {
-                                        // int stringLenght = controller.v.length;
-                                        // String checker = controller.v[stringLenght - 1];
-                                        // if (checker.contains("+") ||
-                                        //     checker.contains("-") ||
-                                        //     checker.contains("*") ||
-                                        //     checker.contains("/")) {
-                                        //   controller.getValue(controller.v
-                                        //       .substring(0, controller.v.length - 1));
-                                        // }
-                                        // these code if for ANS button but i cahngd this to % because its more usefull and user friendly
-                                        controller.getValue("%");
-                                        controller.screenUp();
-                                      },
-                                      child: const Text(
-                                        "%",
-                                        style: TextStyleClass.style,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 14,
-                              ),
-                              Row(
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            CustomContainerBox(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
                                   ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
+                                    style: ElevatedButtonStyle.operatorStyle,
                                     onPressed: () {
-                                      controller.getValue("7");
-                                      controller.screenUp();
+                                      controller.clear();
                                     },
                                     child: const Text(
-                                      "7",
+                                      "AC",
                                       style: TextStyleClass.style,
                                     ),
                                   ),
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
                                   ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
+                                    style: ElevatedButtonStyle.operatorStyle,
                                     onPressed: () {
-                                      controller.getValue("8");
-                                      controller.screenUp();
+                                      controller.backspace();
                                     },
                                     child: const Text(
-                                      "8",
+                                      "C",
                                       style: TextStyleClass.style,
                                     ),
                                   ),
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
                                   ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
+                                    style: ElevatedButtonStyle.operatorStyle,
                                     onPressed: () {
-                                      controller.getValue("9");
+                                      // int stringLenght = controller.v.length;
+                                      // String checker = controller.v[stringLenght - 1];
+                                      // if (checker.contains("+") ||
+                                      //     checker.contains("-") ||
+                                      //     checker.contains("*") ||
+                                      //     checker.contains("/")) {
+                                      //   controller.getValue(controller.v
+                                      //       .substring(0, controller.v.length - 1));
+                                      // }
+                                      // these code if for ANS button but i cahngd this to % because its more usefull and user friendly
+                                      controller.getValue("%");
                                       controller.screenUp();
                                     },
                                     child: const Text(
-                                      "9",
+                                      "%",
                                       style: TextStyleClass.style,
                                     ),
                                   ),
                                 ],
                               ),
-                              const SizedBox(
-                                height: 21,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
-                                    onPressed: () {
-                                      controller.getValue("4");
-                                      controller.screenUp();
-                                    },
-                                    child: const Text(
-                                      "4",
-                                      style: TextStyleClass.style,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
-                                    onPressed: () {
-                                      controller.getValue("5");
-                                      controller.screenUp();
-                                    },
-                                    child: const Text(
-                                      "5",
-                                      style: TextStyleClass.style,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
-                                    onPressed: () {
-                                      controller.getValue("6");
-                                      controller.screenUp();
-                                    },
-                                    child: const Text(
-                                      "6",
-                                      style: TextStyleClass.style,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 21,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
-                                    onPressed: () {
-                                      controller.getValue("1");
-                                      controller.screenUp();
-                                    },
-                                    child: const Text(
-                                      "1",
-                                      style: TextStyleClass.style,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
-                                    onPressed: () {
-                                      controller.getValue("2");
-                                      controller.screenUp();
-                                    },
-                                    child: const Text(
-                                      "2",
-                                      style: TextStyleClass.style,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
-                                    onPressed: () {
-                                      controller.getValue("3");
-                                      controller.screenUp();
-                                    },
-                                    child: const Text(
-                                      "3",
-                                      style: TextStyleClass.style,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 21,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle0,
-                                    onPressed: () {
-                                      controller.getValue("0");
-                                      controller.screenUp();
-                                    },
-                                    child: const Text(
-                                      "0            ",
-                                      style: TextStyleClass.style,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 22,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButtonStyle.btnstyle,
-                                    onPressed: () {
-                                      controller.getValue(".");
-                                      controller.screenUp();
-                                    },
-                                    child: const Text(
-                                      ".",
-                                      style: TextStyleClass.style,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 21,
-                              ),
-                            ],
-                          ),
-                          CustomContainerBox2(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            ),
+                            const SizedBox(
+                              height: 14,
+                            ),
+                            Row(
                               children: [
+                                const SizedBox(
+                                  width: 22,
+                                ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.operatorStyle,
+                                  style: ElevatedButtonStyle.btnstyle,
                                   onPressed: () {
-                                    controller.getValue("/");
+                                    controller.getValue("7");
                                     controller.screenUp();
                                   },
                                   child: const Text(
-                                    "÷",
+                                    "7",
                                     style: TextStyleClass.style,
                                   ),
                                 ),
+                                const SizedBox(
+                                  width: 22,
+                                ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.operatorStyle,
+                                  style: ElevatedButtonStyle.btnstyle,
                                   onPressed: () {
-                                    controller.getValue("*");
+                                    controller.getValue("8");
                                     controller.screenUp();
                                   },
                                   child: const Text(
-                                    "×",
+                                    "8",
                                     style: TextStyleClass.style,
                                   ),
                                 ),
-                                ElevatedButton(
-                                  style: ElevatedButtonStyle.operatorStyle,
-                                  onPressed: () {
-                                    controller.getValue("-");
-                                    controller.screenUp();
-                                  },
-                                  child: const Text(
-                                    "-",
-                                    style: TextStyleClass.style,
-                                  ),
+                                const SizedBox(
+                                  width: 22,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.operatorStyle,
+                                  style: ElevatedButtonStyle.btnstyle,
                                   onPressed: () {
-                                    controller.getValue("+");
+                                    controller.getValue("9");
                                     controller.screenUp();
                                   },
                                   child: const Text(
-                                    "+",
-                                    style: TextStyleClass.style,
-                                  ),
-                                ),
-                                ElevatedButton(
-                                  style:
-                                      ElevatedButtonStyle.operatorStyleEquals,
-                                  onPressed: () {
-                                    controller.evaluate();
-                                    controller.screenUp();
-                                  },
-                                  child: const Text(
-                                    "=",
+                                    "9",
                                     style: TextStyleClass.style,
                                   ),
                                 ),
                               ],
                             ),
+                            const SizedBox(
+                              height: 21,
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 22,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButtonStyle.btnstyle,
+                                  onPressed: () {
+                                    controller.getValue("4");
+                                    controller.screenUp();
+                                  },
+                                  child: const Text(
+                                    "4",
+                                    style: TextStyleClass.style,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 22,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButtonStyle.btnstyle,
+                                  onPressed: () {
+                                    controller.getValue("5");
+                                    controller.screenUp();
+                                  },
+                                  child: const Text(
+                                    "5",
+                                    style: TextStyleClass.style,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 22,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButtonStyle.btnstyle,
+                                  onPressed: () {
+                                    controller.getValue("6");
+                                    controller.screenUp();
+                                  },
+                                  child: const Text(
+                                    "6",
+                                    style: TextStyleClass.style,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 21,
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 22,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButtonStyle.btnstyle,
+                                  onPressed: () {
+                                    controller.getValue("1");
+                                    controller.screenUp();
+                                  },
+                                  child: const Text(
+                                    "1",
+                                    style: TextStyleClass.style,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 22,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButtonStyle.btnstyle,
+                                  onPressed: () {
+                                    controller.getValue("2");
+                                    controller.screenUp();
+                                  },
+                                  child: const Text(
+                                    "2",
+                                    style: TextStyleClass.style,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 22,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButtonStyle.btnstyle,
+                                  onPressed: () {
+                                    controller.getValue("3");
+                                    controller.screenUp();
+                                  },
+                                  child: const Text(
+                                    "3",
+                                    style: TextStyleClass.style,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 21,
+                            ),
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 22,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButtonStyle.btnstyle0,
+                                  onPressed: () {
+                                    controller.getValue("0");
+                                    controller.screenUp();
+                                  },
+                                  child: const Text(
+                                    "0            ",
+                                    style: TextStyleClass.style,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 22,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButtonStyle.btnstyle,
+                                  onPressed: () {
+                                    controller.getValue(".");
+                                    controller.screenUp();
+                                  },
+                                  child: const Text(
+                                    ".",
+                                    style: TextStyleClass.style,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 21,
+                            ),
+                          ],
+                        ),
+                        CustomContainerBox2(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ElevatedButton(
+                                style: ElevatedButtonStyle.operatorStyle,
+                                onPressed: () {
+                                  controller.getValue("/");
+                                  controller.screenUp();
+                                },
+                                child: const Text(
+                                  "÷",
+                                  style: TextStyleClass.style,
+                                ),
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButtonStyle.operatorStyle,
+                                onPressed: () {
+                                  controller.getValue("*");
+                                  controller.screenUp();
+                                },
+                                child: const Text(
+                                  "×",
+                                  style: TextStyleClass.style,
+                                ),
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButtonStyle.operatorStyle,
+                                onPressed: () {
+                                  controller.getValue("-");
+                                  controller.screenUp();
+                                },
+                                child: const Text(
+                                  "-",
+                                  style: TextStyleClass.style,
+                                ),
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButtonStyle.operatorStyle,
+                                onPressed: () {
+                                  controller.getValue("+");
+                                  controller.screenUp();
+                                },
+                                child: const Text(
+                                  "+",
+                                  style: TextStyleClass.style,
+                                ),
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButtonStyle.operatorStyleEquals,
+                                onPressed: () {
+                                  controller.evaluate();
+                                  controller.screenUp();
+                                },
+                                child: const Text(
+                                  "=",
+                                  style: TextStyleClass.style,
+                                ),
+                              ),
+                            ],
                           ),
-                          // const SizedBox(
-                          //   height: 10,
-                          // ),
-                        ],
-                      ),
+                        ),
+                        // const SizedBox(
+                        //   height: 10,
+                        // ),
+                      ],
                     ),
                   ],
                 ),
