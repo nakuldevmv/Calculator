@@ -138,26 +138,38 @@ class CustomContainerBox2 extends StatelessWidget {
 class TextStyleClass {
   // 1. Change to a regular class (not a widget)
   static const TextStyle style = TextStyle(
-      // 2. Use a static const property for style
-      fontSize: 32,
-      fontWeight: FontWeight.normal,
-      color: Colors.white);
+    // 2. Use a static const property for style
+    fontSize: 25,
+    fontWeight: FontWeight.normal,
+    color: Colors.white,
+  );
 }
 
 class ElevatedButtonStyle {
   static ButtonStyle btnstyle = ElevatedButton.styleFrom(
     minimumSize: const Size(74, 74),
-    backgroundColor: const Color.fromARGB(135, 1, 5, 7),
+    backgroundColor: const Color.fromARGB(127, 1, 5, 7),
+    foregroundColor: Colors.black,
   );
   static ButtonStyle btnstyle0 = ElevatedButton.styleFrom(
       minimumSize: const Size(170, 74),
-      backgroundColor: const Color.fromARGB(135, 1, 5, 7),
+      backgroundColor: const Color.fromARGB(127, 1, 5, 7),
+      foregroundColor: Colors.black,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)));
 
   static ButtonStyle operatorStyle = ElevatedButton.styleFrom(
+      elevation: 0,
+      minimumSize: const Size(82, 82),
+      backgroundColor: Colors.transparent,
+      foregroundColor: Colors.black,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25),
+      ));
+  static ButtonStyle scientificBtn = ElevatedButton.styleFrom(
+    padding: const EdgeInsets.all(0),
     elevation: 0,
-    minimumSize: const Size(82, 82),
-    backgroundColor: Colors.transparent,
+    minimumSize: const Size(92, 82),
+    backgroundColor: const Color.fromARGB(127, 1, 5, 7),
     foregroundColor: Colors.black,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(25),

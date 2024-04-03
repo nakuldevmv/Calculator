@@ -41,6 +41,8 @@ class TapResult extends GetxController {
     if (_v.contains("+") ||
         _v.contains("-") ||
         _v.contains("*") ||
+        _v.contains("%") ||
+        _v.contains("^") ||
         _v.contains("/")) {
       if (_v.isNotEmpty) {
         _v = _v.substring(0, _v.length - 1);
