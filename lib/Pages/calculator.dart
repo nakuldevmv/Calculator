@@ -27,62 +27,70 @@ class calculator extends StatelessWidget {
             builder: (getanswer) {
               return mainscreen(
                 isValue: controller.isValue,
-                child: Stack(
-                  alignment: Alignment.bottomCenter,
+                //   child: Stack(
+                //     alignment: Alignment.bottomCenter,
+                //     children: [
+                //       // Positioned(
+                //       //   top: 25,
+                //       //   left: 25,
+                //       //   child: InkWell(
+                //       //       onTap: () {
+                //       //         controller.screenUp();
+                //       //       },
+                //       //       child: const Icon(
+                //       //         Icons.menu,
+                //       //         size: 30,
+                //       //       )),
+                //       // ),
+                //       Container(
+                //         height: 115,
+                //         width: 375,
+                //         padding: const EdgeInsets.only(
+                //             left: 40, right: 40, bottom: 10),
+                //         // color: const Color.fromARGB(66, 244, 67, 54),
+                //         child: Column(
+                //           mainAxisAlignment: MainAxisAlignment.end,
+                //           crossAxisAlignment: CrossAxisAlignment.end,
+                //           children: [
+                //             Container(
+                //               color: Colors.transparent,
+                //               child: Text(
+                //                 controller.h.toString(),
+                //                 style: const TextStyle(fontSize: 22),
+                //               ),
+                //             ),
+                //             const SizedBox(
+                //               height: 5,
+                //             ),
+                //             Row(
+                //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //               children: [
+                //                 const Text(
+                //                   "=",
+                //                   style: TextStyle(fontSize: 40),
+                //                 ),
+                //                 SizedBox(
+                //                   width: 200,
+                //                   child: Text(
+                //                     textAlign: TextAlign.right,
+                //                     overflow: TextOverflow.ellipsis,
+                //                     controller.v.toString(),
+                //                     style: const TextStyle(fontSize: 40),
+                //                   ),
+                //                 ),
+                //               ],
+                //             )
+                //           ],
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+
+                child: const Column(
                   children: [
-                    // Positioned(
-                    //   top: 25,
-                    //   left: 25,
-                    //   child: InkWell(
-                    //       onTap: () {
-                    //         controller.screenUp();
-                    //       },
-                    //       child: const Icon(
-                    //         Icons.menu,
-                    //         size: 30,
-                    //       )),
-                    // ),
-                    Container(
-                      height: 115,
-                      width: 375,
-                      padding: const EdgeInsets.only(
-                          left: 40, right: 40, bottom: 10),
-                      // color: const Color.fromARGB(66, 244, 67, 54),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Container(
-                            color: Colors.transparent,
-                            child: Text(
-                              controller.h.toString(),
-                              style: const TextStyle(fontSize: 22),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                "=",
-                                style: TextStyle(fontSize: 40),
-                              ),
-                              SizedBox(
-                                width: 200,
-                                child: Text(
-                                  textAlign: TextAlign.right,
-                                  overflow: TextOverflow.ellipsis,
-                                  controller.v.toString(),
-                                  style: const TextStyle(fontSize: 40),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
+                    Row(
+                      children: [],
+                    )
                   ],
                 ),
               );
@@ -754,7 +762,7 @@ class calculator extends StatelessWidget {
                       dotColor: Color.fromARGB(123, 1, 5, 7),
                       dotHeight: 10,
                       dotWidth: 20,
-                      activeDotColor: Color.fromARGB(255, 1, 5, 7),
+                      activeDotColor: Color.fromARGB(64, 255, 255, 255),
                     ),
                   ),
                 ),
