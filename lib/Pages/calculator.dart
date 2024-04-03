@@ -14,9 +14,6 @@ class calculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final controller = Get.put(CustomContainer);
-    // Get.put(AnimatedController());
-    // visualControl vis = Get.put(visualControl());
     TapResult controller = Get.put(TapResult());
     final ctrlPG = PageController(initialPage: 1);
 
