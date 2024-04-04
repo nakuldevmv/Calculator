@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:getxapptest/Controllers/controlers.dart';
 import 'package:getxapptest/styles/customContainer.dart';
@@ -18,70 +20,72 @@ class calculator extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          GetBuilder<TapResult>(
-            builder: (getanswer) {
-              return mainscreen(
-                isValue: controller.isValue,
-                child: Container(
-                  height: 115,
-                  width: 375,
-                  padding:
-                      const EdgeInsets.only(left: 40, right: 40, bottom: 10),
-                  // color: const Color.fromARGB(66, 244, 67, 54),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        color: Colors.transparent,
-                        child: Text(
-                          controller.h.toString(),
-                          style: const TextStyle(fontSize: 22),
+          Expanded(
+            child: GetBuilder<TapResult>(
+              builder: (getanswer) {
+                return mainscreen(
+                  isValue: controller.isValue,
+                  child: Container(
+                    height: 115,
+                    width: 375,
+                    padding:
+                        const EdgeInsets.only(left: 40, right: 40, bottom: 10),
+                    // color: const Color.fromARGB(66, 244, 67, 54),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          color: Colors.transparent,
+                          child: Text(
+                            controller.h.toString(),
+                            style: const TextStyle(fontSize: 22),
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 2000),
-                        child: Divider(
-                          color: controller.isValue != true
-                              ? const Color(0xff333333)
-                              : const Color.fromARGB(126, 255, 255, 255),
-                          height: controller.isValue != true ? 0 : 5,
-                          thickness: 0.5,
+                        const SizedBox(
+                          height: 5,
                         ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          controller.showAns();
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              "=",
-                              style: TextStyle(fontSize: 40),
-                            ),
-                            SizedBox(
-                              width: 273,
-                              child: Text(
-                                textAlign: TextAlign.right,
-                                overflow: controller.AnsTF
-                                    ? TextOverflow.visible
-                                    : TextOverflow.ellipsis,
-                                controller.v.toString(),
-                                style: const TextStyle(fontSize: 40),
+                        AnimatedContainer(
+                          duration: const Duration(milliseconds: 2000),
+                          child: Divider(
+                            color: controller.isValue != true
+                                ? const Color(0xff333333)
+                                : const Color.fromARGB(126, 255, 255, 255),
+                            height: controller.isValue != true ? 0 : 5,
+                            thickness: 0.5,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            controller.showAns();
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "=",
+                                style: TextStyle(fontSize: 40),
                               ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
+                              SizedBox(
+                                width: 273,
+                                child: Text(
+                                  textAlign: TextAlign.right,
+                                  overflow: controller.AnsTF
+                                      ? TextOverflow.visible
+                                      : TextOverflow.ellipsis,
+                                  controller.v.toString(),
+                                  style: const TextStyle(fontSize: 40),
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 25),
@@ -131,9 +135,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -145,9 +146,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -158,9 +156,6 @@ class calculator extends StatelessWidget {
                                   "^",
                                   style: TextStyleClass.style,
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 0,
                               ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
@@ -192,9 +187,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -206,9 +198,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -219,9 +208,6 @@ class calculator extends StatelessWidget {
                                   "²√",
                                   style: TextStyleClass.style,
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 0,
                               ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
@@ -253,9 +239,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -267,9 +250,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -280,9 +260,6 @@ class calculator extends StatelessWidget {
                                   "tan",
                                   style: TextStyleClass.style,
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 0,
                               ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
@@ -314,9 +291,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -328,9 +302,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -341,9 +312,6 @@ class calculator extends StatelessWidget {
                                   "eˣ",
                                   style: TextStyleClass.style,
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 0,
                               ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
@@ -375,9 +343,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -389,9 +354,6 @@ class calculator extends StatelessWidget {
                                   style: TextStyleClass.style,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 0,
-                              ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
                                 onPressed: () {
@@ -402,9 +364,6 @@ class calculator extends StatelessWidget {
                                   "log",
                                   style: TextStyleClass.style,
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 0,
                               ),
                               ElevatedButton(
                                 style: ElevatedButtonStyle.scientificBtn,
@@ -736,8 +695,8 @@ class calculator extends StatelessWidget {
                     ),
                   ],
                 ),
-                Positioned(
-                  top: 490,
+                Container(
+                  padding: const EdgeInsets.only(bottom: 9),
                   child: SmoothPageIndicator(
                     controller: ctrlPG,
                     count: 2,
