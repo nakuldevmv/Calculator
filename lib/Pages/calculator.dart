@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:getxapptest/Controllers/controlers.dart';
 import 'package:getxapptest/styles/customContainer.dart';
@@ -63,7 +61,7 @@ class calculator extends StatelessWidget {
                             ),
                             SizedBox(
                               // color: Colors.amber,
-                              width: sizeOf.size.width * .6639,
+                              width: sizeOf.size.width * .645,
                               // 273
                               child: Text(
                                 textAlign: TextAlign.right,
@@ -85,7 +83,7 @@ class calculator extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.only(top: 25),
-            height: sizeOf.size.height * .588,
+            height: sizeOf.size.height * .58495,
             width: sizeOf.size.width * 1,
             decoration: const BoxDecoration(
                 // color: Color(0xFF153F5B),
