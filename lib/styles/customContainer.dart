@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomContainerBox extends StatelessWidget {
   final Widget child;
@@ -7,9 +8,11 @@ class CustomContainerBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizeOf = MediaQuery.of(context);
+
     return Container(
       margin: const EdgeInsets.only(top: 21, left: 22),
-      width: 265,
+      width: sizeOf.size.width * .65,
       height: 82,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
@@ -49,10 +52,11 @@ class CustomContainerBox2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizeOf = MediaQuery.of(context);
     return Container(
       margin: const EdgeInsets.only(top: 21, left: 22),
       width: 82,
-      height: 456,
+      height: sizeOf.size.height * .52,
       alignment: Alignment.center,
       transformAlignment: Alignment.center,
       decoration: BoxDecoration(
@@ -131,7 +135,7 @@ class mainscreen extends StatelessWidget {
     return AnimatedContainer(
       margin: const EdgeInsets.only(top: 46, left: 18, right: 18),
       // height: 296,
-      width: 394,
+      // width: 394,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         gradient: isValue

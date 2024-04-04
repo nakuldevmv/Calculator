@@ -12,6 +12,8 @@ class calculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizeOf = MediaQuery.of(context);
+
     TapResult controller = Get.put(TapResult());
     final ctrlPG = PageController(initialPage: 1);
 
@@ -20,77 +22,71 @@ class calculator extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Expanded(
-            child: GetBuilder<TapResult>(
-              builder: (getanswer) {
-                return mainscreen(
-                  isValue: controller.isValue,
-                  child: Container(
-                    height: 115,
-                    width: 375,
-                    padding:
-                        const EdgeInsets.only(left: 40, right: 40, bottom: 10),
-                    // color: const Color.fromARGB(66, 244, 67, 54),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Container(
-                          color: Colors.transparent,
-                          child: Text(
-                            controller.h.toString(),
-                            style: const TextStyle(fontSize: 22),
-                          ),
+          GetBuilder<TapResult>(
+            builder: (getanswer) {
+              return mainscreen(
+                isValue: controller.isValue,
+                child: Container(
+                  height: sizeOf.size.height * .3308968,
+                  width: sizeOf.size.width * .99,
+                  padding:
+                      const EdgeInsets.only(left: 40, right: 40, bottom: 10),
+                  // color: const Color.fromARGB(66, 244, 67, 54),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        color: Colors.transparent,
+                        child: Text(
+                          controller.h.toString(),
+                          style: const TextStyle(fontSize: 22),
                         ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        AnimatedContainer(
-                          duration: const Duration(milliseconds: 2000),
-                          child: Divider(
-                            color: controller.isValue != true
-                                ? const Color(0xff333333)
-                                : const Color.fromARGB(126, 255, 255, 255),
-                            height: controller.isValue != true ? 0 : 5,
-                            thickness: 0.5,
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            controller.showAns();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                "=",
-                                style: TextStyle(fontSize: 40),
+                      ),
+                      Divider(
+                        color: controller.isValue != true
+                            ? const Color(0xff333333)
+                            : const Color.fromARGB(126, 255, 255, 255),
+                        height: controller.isValue != true ? 0 : 8,
+                        thickness: 0.5,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          controller.showAns();
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "=",
+                              style: TextStyle(fontSize: 40),
+                            ),
+                            SizedBox(
+                              // color: Colors.amber,
+                              width: sizeOf.size.width * .6639,
+                              // 273
+                              child: Text(
+                                textAlign: TextAlign.right,
+                                overflow: controller.AnsTF
+                                    ? TextOverflow.visible
+                                    : TextOverflow.ellipsis,
+                                controller.v.toString(),
+                                style: const TextStyle(fontSize: 40),
                               ),
-                              SizedBox(
-                                width: 273,
-                                child: Text(
-                                  textAlign: TextAlign.right,
-                                  overflow: controller.AnsTF
-                                      ? TextOverflow.visible
-                                      : TextOverflow.ellipsis,
-                                  controller.v.toString(),
-                                  style: const TextStyle(fontSize: 40),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
           Container(
             margin: const EdgeInsets.only(top: 25),
-            height: 508.4,
-            width: double.maxFinite,
+            height: sizeOf.size.height * .588,
+            width: sizeOf.size.width * 1,
             decoration: const BoxDecoration(
                 // color: Color(0xFF153F5B),
                 gradient: LinearGradient(
@@ -696,7 +692,7 @@ class calculator extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  padding: const EdgeInsets.only(bottom: 9),
+                  padding: const EdgeInsets.only(bottom: 15),
                   child: SmoothPageIndicator(
                     controller: ctrlPG,
                     count: 2,
