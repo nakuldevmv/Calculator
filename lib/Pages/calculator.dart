@@ -10,8 +10,27 @@ class calculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var sizeOf = MediaQuery.of(context);
+    // var sizeOf = MediaQuery.of(context);
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final ratioh = screenHeight / 394;
+    final ratiow = screenWidth / 296;
 
+    final containerWidth = screenWidth / ratiow;
+    final containerHeight = screenHeight / ratioh;
+
+    final ratioh2 = screenHeight / 508;
+
+    final containerHeight2 = screenHeight / ratioh2;
+
+    final sr = screenHeight / 14;
+    final sizedboxH = screenHeight / sr;
+
+    final sr1 = screenHeight / 21;
+    final sizedboxH1 = screenHeight / sr1;
+
+    final sr2 = screenWidth / 22;
+    final sizedboxW1 = screenWidth / sr2;
     TapResult controller = Get.put(TapResult());
     final ctrlPG = PageController(initialPage: 1);
 
@@ -25,10 +44,10 @@ class calculator extends StatelessWidget {
               return mainscreen(
                 isValue: controller.isValue,
                 child: Container(
-                  height: sizeOf.size.height * .3308968,
-                  width: sizeOf.size.width * .99,
+                  height: containerWidth,
+                  width: containerHeight,
                   padding:
-                      const EdgeInsets.only(left: 40, right: 40, bottom: 10),
+                      const EdgeInsets.only(left: 30, right: 30, bottom: 10),
                   // color: const Color.fromARGB(66, 244, 67, 54),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -61,7 +80,7 @@ class calculator extends StatelessWidget {
                             ),
                             SizedBox(
                               // color: Colors.amber,
-                              width: sizeOf.size.width * .645,
+                              width: MediaQuery.of(context).size.width * .645,
                               // 273
                               child: Text(
                                 textAlign: TextAlign.right,
@@ -82,9 +101,10 @@ class calculator extends StatelessWidget {
             },
           ),
           Container(
-            margin: const EdgeInsets.only(top: 25),
-            height: sizeOf.size.height * .58495,
-            width: sizeOf.size.width * 1,
+            margin: const EdgeInsets.only(top: 20),
+            height: containerHeight2,
+            // sizeOf.size.height * .58495
+            width: double.maxFinite,
             decoration: const BoxDecoration(
                 // color: Color(0xFF153F5B),
                 gradient: LinearGradient(
@@ -112,14 +132,15 @@ class calculator extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          const SizedBox(
-                            height: 14,
+                          SizedBox(
+                            height: sizedboxH,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("(");
                                   controller.screenUp();
@@ -130,7 +151,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue(")");
                                   controller.screenUp();
@@ -141,7 +163,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("^");
                                   controller.screenUp();
@@ -152,7 +175,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("abs");
                                   controller.screenUp();
@@ -164,14 +188,12 @@ class calculator extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 0,
-                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("^2");
                                   controller.screenUp();
@@ -182,7 +204,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("^3");
                                   controller.screenUp();
@@ -193,7 +216,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("sqrt(");
                                   controller.screenUp();
@@ -204,7 +228,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("^(1/3)");
                                   controller.screenUp();
@@ -216,14 +241,12 @@ class calculator extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 0,
-                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("sin(");
                                   controller.screenUp();
@@ -234,7 +257,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("cos(");
                                   controller.screenUp();
@@ -245,7 +269,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("tan(");
                                   controller.screenUp();
@@ -256,7 +281,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("sinh(");
                                   controller.screenUp();
@@ -268,14 +294,12 @@ class calculator extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 0,
-                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("cosh(");
                                   controller.screenUp();
@@ -286,7 +310,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("tanh(");
                                   controller.screenUp();
@@ -297,7 +322,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("e^");
                                   controller.screenUp();
@@ -308,7 +334,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("e");
                                   controller.screenUp();
@@ -320,14 +347,12 @@ class calculator extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 0,
-                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("log10e");
                                   controller.screenUp();
@@ -338,7 +363,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("log2e");
                                   controller.screenUp();
@@ -349,7 +375,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("log(");
                                   controller.screenUp();
@@ -360,7 +387,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.scientificBtn,
+                                style:
+                                    ElevatedButtonStyle.scientificBtn(context),
                                 onPressed: () {
                                   controller.getValue("pi");
                                   controller.screenUp();
@@ -372,8 +400,8 @@ class calculator extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 21,
+                          SizedBox(
+                            height: sizedboxH1,
                           ),
                         ],
                       ),
@@ -390,7 +418,8 @@ class calculator extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   ElevatedButton(
-                                    style: ElevatedButtonStyle.operatorStyle,
+                                    style: ElevatedButtonStyle.operatorStyle(
+                                        context),
                                     onPressed: () {
                                       controller.clear();
                                     },
@@ -400,7 +429,8 @@ class calculator extends StatelessWidget {
                                     ),
                                   ),
                                   ElevatedButton(
-                                    style: ElevatedButtonStyle.operatorStyle,
+                                    style: ElevatedButtonStyle.operatorStyle(
+                                        context),
                                     onPressed: () {
                                       controller.backspace();
                                     },
@@ -410,7 +440,8 @@ class calculator extends StatelessWidget {
                                     ),
                                   ),
                                   ElevatedButton(
-                                    style: ElevatedButtonStyle.operatorStyle,
+                                    style: ElevatedButtonStyle.operatorStyle(
+                                        context),
                                     onPressed: () {
                                       // int stringLenght = controller.v.length;
                                       // String checker = controller.v[stringLenght - 1];
@@ -433,16 +464,16 @@ class calculator extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            const SizedBox(
-                              height: 14,
+                            SizedBox(
+                              height: sizedboxH,
                             ),
                             Row(
                               children: [
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("7");
                                     controller.screenUp();
@@ -452,11 +483,11 @@ class calculator extends StatelessWidget {
                                     style: TextStyleClass.style,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("8");
                                     controller.screenUp();
@@ -466,11 +497,11 @@ class calculator extends StatelessWidget {
                                     style: TextStyleClass.style,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("9");
                                     controller.screenUp();
@@ -482,16 +513,16 @@ class calculator extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 21,
+                            SizedBox(
+                              height: sizedboxH1,
                             ),
                             Row(
                               children: [
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("4");
                                     controller.screenUp();
@@ -501,11 +532,11 @@ class calculator extends StatelessWidget {
                                     style: TextStyleClass.style,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("5");
                                     controller.screenUp();
@@ -515,11 +546,11 @@ class calculator extends StatelessWidget {
                                     style: TextStyleClass.style,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("6");
                                     controller.screenUp();
@@ -531,16 +562,16 @@ class calculator extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 21,
+                            SizedBox(
+                              height: sizedboxH1,
                             ),
                             Row(
                               children: [
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("1");
                                     controller.screenUp();
@@ -550,11 +581,11 @@ class calculator extends StatelessWidget {
                                     style: TextStyleClass.style,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("2");
                                     controller.screenUp();
@@ -564,11 +595,11 @@ class calculator extends StatelessWidget {
                                     style: TextStyleClass.style,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue("3");
                                     controller.screenUp();
@@ -580,16 +611,16 @@ class calculator extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 21,
+                            SizedBox(
+                              height: sizedboxH1,
                             ),
                             Row(
                               children: [
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle0,
+                                  style: ElevatedButtonStyle.btnstyle0(context),
                                   onPressed: () {
                                     controller.getValue("0");
                                     controller.screenUp();
@@ -599,11 +630,11 @@ class calculator extends StatelessWidget {
                                     style: TextStyleClass.style,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 22,
+                                SizedBox(
+                                  width: sizedboxW1,
                                 ),
                                 ElevatedButton(
-                                  style: ElevatedButtonStyle.btnstyle,
+                                  style: ElevatedButtonStyle.btnstyle(context),
                                   onPressed: () {
                                     controller.getValue(".");
                                     controller.screenUp();
@@ -615,8 +646,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 21,
+                            SizedBox(
+                              height: sizedboxH1,
                             ),
                           ],
                         ),
@@ -625,7 +656,8 @@ class calculator extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ElevatedButton(
-                                style: ElevatedButtonStyle.operatorStyle,
+                                style:
+                                    ElevatedButtonStyle.operatorStyle(context),
                                 onPressed: () {
                                   controller.getValue("/");
                                   controller.screenUp();
@@ -636,7 +668,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.operatorStyle,
+                                style:
+                                    ElevatedButtonStyle.operatorStyle(context),
                                 onPressed: () {
                                   controller.getValue("*");
                                   controller.screenUp();
@@ -647,7 +680,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.operatorStyle,
+                                style:
+                                    ElevatedButtonStyle.operatorStyle(context),
                                 onPressed: () {
                                   controller.getValue("-");
                                   controller.screenUp();
@@ -658,7 +692,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.operatorStyle,
+                                style:
+                                    ElevatedButtonStyle.operatorStyle(context),
                                 onPressed: () {
                                   controller.getValue("+");
                                   controller.screenUp();
@@ -669,7 +704,8 @@ class calculator extends StatelessWidget {
                                 ),
                               ),
                               ElevatedButton(
-                                style: ElevatedButtonStyle.operatorStyleEquals,
+                                style: ElevatedButtonStyle.operatorStyleEquals(
+                                    context),
                                 onPressed: () {
                                   controller.evaluate();
                                   controller.screenUp();
@@ -690,7 +726,7 @@ class calculator extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  padding: const EdgeInsets.only(bottom: 15),
+                  padding: const EdgeInsets.only(bottom: 20),
                   child: SmoothPageIndicator(
                     controller: ctrlPG,
                     count: 2,

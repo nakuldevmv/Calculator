@@ -9,12 +9,17 @@ class CustomContainerBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var sizeOf = MediaQuery.of(context);
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final ratioh = screenHeight / 80;
+    final ratiow = screenWidth / 265;
 
+    final buttonWidth = screenWidth / ratiow;
+    final buttonHeight = screenHeight / ratioh;
     return Container(
       margin: const EdgeInsets.only(top: 21, left: 22),
-      width: sizeOf.size.width * .65,
-      height: 82,
+      width: buttonWidth,
+      height: buttonHeight,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           color: const Color.fromARGB(75, 0, 0, 0)
@@ -53,11 +58,17 @@ class CustomContainerBox2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var sizeOf = MediaQuery.of(context);
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final ratioh = screenHeight / 440;
+    final ratiow = screenWidth / 80;
+
+    final buttonWidth = screenWidth / ratiow;
+    final buttonHeight = screenHeight / ratioh;
     return Container(
       margin: const EdgeInsets.only(top: 21, left: 22),
-      width: 82,
-      height: sizeOf.size.height * .52,
+      width: buttonWidth,
+      height: buttonHeight,
       alignment: Alignment.center,
       transformAlignment: Alignment.center,
       decoration: BoxDecoration(
@@ -79,45 +90,106 @@ class TextStyleClass {
 }
 
 class ElevatedButtonStyle {
-  static ButtonStyle btnstyle = ElevatedButton.styleFrom(
-    minimumSize: const Size(74, 74),
-    backgroundColor: const Color.fromARGB(127, 1, 5, 7),
-    foregroundColor: Colors.black,
-  );
-  static ButtonStyle btnstyle0 = ElevatedButton.styleFrom(
-      minimumSize: const Size(170, 74),
+  static ButtonStyle btnstyle(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    final ratioh = screenHeight / 70;
+    final ratiow = screenWidth / 70;
+
+    final buttonWidth = screenWidth / ratiow;
+    final buttonHeight = screenHeight / ratioh;
+
+    return ElevatedButton.styleFrom(
+      minimumSize: Size(buttonWidth, buttonHeight),
       backgroundColor: const Color.fromARGB(127, 1, 5, 7),
       foregroundColor: Colors.black,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)));
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(screenWidth * 1),
+      ),
+    );
+  }
 
-  static ButtonStyle operatorStyle = ElevatedButton.styleFrom(
-      elevation: 0,
-      minimumSize: const Size(82, 82),
-      backgroundColor: Colors.transparent,
+  static ButtonStyle btnstyle0(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    final ratioh = screenHeight / 70;
+    final ratiow = screenWidth / 170;
+
+    final buttonWidth = screenWidth / ratiow;
+    final buttonHeight = screenHeight / ratioh;
+
+    return ElevatedButton.styleFrom(
+      minimumSize: Size(buttonWidth, buttonHeight),
+      backgroundColor: const Color.fromARGB(127, 1, 5, 7),
       foregroundColor: Colors.black,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
-      ));
-  static ButtonStyle scientificBtn = ElevatedButton.styleFrom(
-    padding: const EdgeInsets.all(0),
-    elevation: 0,
-    minimumSize: const Size(92, 82),
-    backgroundColor: const Color.fromARGB(127, 1, 5, 7),
-    foregroundColor: Colors.black,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(25),
-    ),
-  );
+      ),
+    );
+  }
 
-  static ButtonStyle operatorStyleEquals = ElevatedButton.styleFrom(
-    elevation: 0,
-    minimumSize: const Size(82, 82),
-    backgroundColor: const Color.fromARGB(124, 0, 0, 0),
-    foregroundColor: Colors.black,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(25),
-    ),
-  );
+  static ButtonStyle operatorStyle(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final ratioh = screenHeight / 80;
+    final ratiow = screenWidth / 80;
+
+    final buttonWidth = screenWidth / ratiow;
+    final buttonHeight = screenHeight / ratioh;
+
+    return ElevatedButton.styleFrom(
+        elevation: 0,
+        minimumSize: Size(buttonWidth, buttonHeight),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ));
+  }
+
+  static ButtonStyle scientificBtn(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final ratioh = screenHeight / 80;
+    final ratiow = screenWidth / 90;
+
+    final buttonWidth = screenWidth / ratiow;
+    final buttonHeight = screenHeight / ratioh;
+
+    return ElevatedButton.styleFrom(
+      padding: const EdgeInsets.all(0),
+      elevation: 0,
+      minimumSize: Size(buttonWidth, buttonHeight),
+      backgroundColor: const Color.fromARGB(127, 1, 5, 7),
+      foregroundColor: Colors.black,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25),
+      ),
+    );
+  }
+
+  static ButtonStyle operatorStyleEquals(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final ratioh = screenHeight / 80;
+    final ratiow = screenWidth / 80;
+
+    final buttonWidth = screenWidth / ratiow;
+    final buttonHeight = screenHeight / ratioh;
+
+    return ElevatedButton.styleFrom(
+      padding: const EdgeInsets.all(0),
+      elevation: 0,
+      minimumSize: Size(buttonWidth, buttonHeight),
+      backgroundColor: const Color.fromARGB(124, 0, 0, 0),
+      foregroundColor: Colors.black,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25),
+      ),
+    );
+  }
 }
 
 // ignore: camel_case_types
@@ -135,14 +207,12 @@ class mainscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       margin: const EdgeInsets.only(top: 46, left: 18, right: 18),
-      // height: 296,
-      // width: 394,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         gradient: isValue
             ? const LinearGradient(
                 colors: [
-                  Color.fromARGB(255, 31, 85, 121),
+                  Color.fromARGB(255, 31, 80, 121),
                   Color(0xff153f5b),
                   Color(0xff10344b)
                 ],
