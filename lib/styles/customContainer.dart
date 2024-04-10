@@ -11,8 +11,8 @@ class CustomContainerBox extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final ratioh = screenHeight / 80;
-    final ratiow = screenWidth / 265;
+    final ratioh = screenHeight > 592.0 ? screenHeight / 80 : screenHeight / 60;
+    final ratiow = screenWidth > 360.0 ? screenWidth / 265 : screenWidth / 230;
 
     final buttonWidth = screenWidth / ratiow;
     final buttonHeight = screenHeight / ratioh;
@@ -60,8 +60,9 @@ class CustomContainerBox2 extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final ratioh = screenHeight / 440;
-    final ratiow = screenWidth / 80;
+    final ratioh =
+        screenHeight > 592.0 ? screenHeight / 440 : screenHeight / 325;
+    final ratiow = screenWidth > 360.0 ? screenWidth / 80 : screenWidth / 60;
 
     final buttonWidth = screenWidth / ratiow;
     final buttonHeight = screenHeight / ratioh;
@@ -77,9 +78,7 @@ class CustomContainerBox2 extends StatelessWidget {
       child: child,
     );
   }
-}
 
-class TextStyleClass {
   // 1. Change to a regular class (not a widget)
   static const TextStyle style = TextStyle(
     // 2. Use a static const property for style
@@ -87,15 +86,31 @@ class TextStyleClass {
     fontWeight: FontWeight.normal,
     color: Colors.white,
   );
+  static const TextStyle style01 = TextStyle(
+    // 2. Use a static const property for style
+    fontSize: 25,
+    fontWeight: FontWeight.normal,
+    color: Colors.white,
+  );
 }
+
+// class TextStyleClass {
+//   // 1. Change to a regular class (not a widget)
+//   static const TextStyle style = TextStyle(
+//     // 2. Use a static const property for style
+//     fontSize: 25,
+//     fontWeight: FontWeight.normal,
+//     color: Colors.white,
+//   );
+// }
 
 class ElevatedButtonStyle {
   static ButtonStyle btnstyle(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    final ratioh = screenHeight / 70;
-    final ratiow = screenWidth / 70;
+    final ratioh = screenHeight > 592.0 ? screenHeight / 70 : screenHeight / 60;
+    final ratiow = screenWidth > 360.0 ? screenWidth / 70 : screenWidth / 60;
 
     final buttonWidth = screenWidth / ratiow;
     final buttonHeight = screenHeight / ratioh;
@@ -114,8 +129,8 @@ class ElevatedButtonStyle {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    final ratioh = screenHeight / 70;
-    final ratiow = screenWidth / 170;
+    final ratioh = screenHeight > 592.0 ? screenHeight / 70 : screenHeight / 60;
+    final ratiow = screenWidth > 360.0 ? screenWidth / 170 : screenWidth / 147;
 
     final buttonWidth = screenWidth / ratiow;
     final buttonHeight = screenHeight / ratioh;
@@ -133,8 +148,8 @@ class ElevatedButtonStyle {
   static ButtonStyle operatorStyle(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final ratioh = screenHeight / 80;
-    final ratiow = screenWidth / 80;
+    final ratioh = screenHeight > 592.0 ? screenHeight / 80 : screenHeight / 60;
+    final ratiow = screenWidth > 360.0 ? screenWidth / 80 : screenWidth / 60;
 
     final buttonWidth = screenWidth / ratiow;
     final buttonHeight = screenHeight / ratioh;
@@ -152,8 +167,8 @@ class ElevatedButtonStyle {
   static ButtonStyle scientificBtn(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final ratioh = screenHeight / 80;
-    final ratiow = screenWidth / 90;
+    final ratioh = screenHeight > 592.0 ? screenHeight / 80 : screenHeight / 60;
+    final ratiow = screenWidth > 360.0 ? screenWidth / 90 : screenWidth / 70;
 
     final buttonWidth = screenWidth / ratiow;
     final buttonHeight = screenHeight / ratioh;
@@ -173,8 +188,8 @@ class ElevatedButtonStyle {
   static ButtonStyle operatorStyleEquals(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final ratioh = screenHeight / 80;
-    final ratiow = screenWidth / 80;
+    final ratioh = screenHeight > 592.0 ? screenHeight / 80 : screenHeight / 60;
+    final ratiow = screenWidth > 360.0 ? screenWidth / 80 : screenWidth / 60;
 
     final buttonWidth = screenWidth / ratiow;
     final buttonHeight = screenHeight / ratioh;

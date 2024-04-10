@@ -13,23 +13,28 @@ class calculator extends StatelessWidget {
     // var sizeOf = MediaQuery.of(context);
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final ratioh = screenHeight / 394;
-    final ratiow = screenWidth / 296;
+    print("height $screenHeight");
+    print("width $screenWidth");
+
+    final ratioh =
+        screenHeight > 592.0 ? screenHeight / 290 : screenHeight / 150;
+    final ratiow = screenWidth > 360.0 ? screenWidth / 394 : screenWidth / 394;
 
     final containerWidth = screenWidth / ratiow;
     final containerHeight = screenHeight / ratioh;
 
-    final ratioh2 = screenHeight / 508;
+    final ratioh2 =
+        screenHeight > 592.0 ? screenHeight / 508 : screenHeight / 386;
 
     final containerHeight2 = screenHeight / ratioh2;
 
-    final sr = screenHeight / 14;
+    final sr = screenHeight > 592.0 ? screenHeight / 14 : screenHeight / 8;
     final sizedboxH = screenHeight / sr;
 
-    final sr1 = screenHeight / 21;
+    final sr1 = screenHeight > 592.0 ? screenHeight / 21 : screenHeight / 6;
     final sizedboxH1 = screenHeight / sr1;
 
-    final sr2 = screenWidth / 22;
+    final sr2 = screenWidth > 592.0 ? screenWidth / 22 : screenWidth / 22;
     final sizedboxW1 = screenWidth / sr2;
     TapResult controller = Get.put(TapResult());
     final ctrlPG = PageController(initialPage: 1);
@@ -37,15 +42,15 @@ class calculator extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xff333333),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           GetBuilder<TapResult>(
             builder: (getanswer) {
               return mainscreen(
                 isValue: controller.isValue,
                 child: Container(
-                  height: containerWidth,
-                  width: containerHeight,
+                  height: containerHeight,
+                  width: containerWidth,
                   padding:
                       const EdgeInsets.only(left: 30, right: 30, bottom: 10),
                   // color: const Color.fromARGB(66, 244, 67, 54),
@@ -101,7 +106,9 @@ class calculator extends StatelessWidget {
             },
           ),
           Container(
-            margin: const EdgeInsets.only(top: 20),
+            margin: screenHeight > 592.0
+                ? const EdgeInsets.only(top: 20)
+                : const EdgeInsets.only(top: 10),
             height: containerHeight2,
             // sizeOf.size.height * .58495
             width: double.maxFinite,
@@ -147,7 +154,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "(",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -159,7 +166,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   ")",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -171,7 +178,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "^",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -183,7 +190,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "|x|",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                             ],
@@ -200,7 +207,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "x²",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -212,7 +219,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "x³",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -224,7 +231,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "²√",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -236,7 +243,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "³√",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                             ],
@@ -253,7 +260,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "sin",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -265,7 +272,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "cos",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -277,7 +284,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "tan",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -289,7 +296,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "sinh",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                             ],
@@ -306,7 +313,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "cosh",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -318,7 +325,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "tanh",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -330,7 +337,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "eˣ",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -342,7 +349,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "e",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                             ],
@@ -359,7 +366,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "log10e",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -371,7 +378,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "log2e",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -383,7 +390,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "log",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -395,7 +402,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "π",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                             ],
@@ -425,7 +432,7 @@ class calculator extends StatelessWidget {
                                     },
                                     child: const Text(
                                       "AC",
-                                      style: TextStyleClass.style,
+                                      style: CustomContainerBox2.style,
                                     ),
                                   ),
                                   ElevatedButton(
@@ -436,7 +443,7 @@ class calculator extends StatelessWidget {
                                     },
                                     child: const Text(
                                       "C",
-                                      style: TextStyleClass.style,
+                                      style: CustomContainerBox2.style,
                                     ),
                                   ),
                                   ElevatedButton(
@@ -458,7 +465,7 @@ class calculator extends StatelessWidget {
                                     },
                                     child: const Text(
                                       "%",
-                                      style: TextStyleClass.style,
+                                      style: CustomContainerBox2.style,
                                     ),
                                   ),
                                 ],
@@ -480,7 +487,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "7",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                                 SizedBox(
@@ -494,7 +501,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "8",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                                 SizedBox(
@@ -508,7 +515,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "9",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                               ],
@@ -529,7 +536,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "4",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                                 SizedBox(
@@ -543,7 +550,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "5",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                                 SizedBox(
@@ -557,7 +564,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "6",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                               ],
@@ -578,7 +585,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "1",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                                 SizedBox(
@@ -592,7 +599,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "2",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                                 SizedBox(
@@ -606,7 +613,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "3",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                               ],
@@ -627,7 +634,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     "0            ",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                                 SizedBox(
@@ -641,7 +648,7 @@ class calculator extends StatelessWidget {
                                   },
                                   child: const Text(
                                     ".",
-                                    style: TextStyleClass.style,
+                                    style: CustomContainerBox2.style,
                                   ),
                                 ),
                               ],
@@ -664,7 +671,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "÷",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -676,7 +683,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "×",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -688,7 +695,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "-",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -700,7 +707,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "+",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                               ElevatedButton(
@@ -712,7 +719,7 @@ class calculator extends StatelessWidget {
                                 },
                                 child: const Text(
                                   "=",
-                                  style: TextStyleClass.style,
+                                  style: CustomContainerBox2.style,
                                 ),
                               ),
                             ],
@@ -726,7 +733,9 @@ class calculator extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  padding: const EdgeInsets.only(bottom: 20),
+                  padding: screenHeight > 592
+                      ? const EdgeInsets.only(bottom: 20)
+                      : const EdgeInsets.only(bottom: 5),
                   child: SmoothPageIndicator(
                     controller: ctrlPG,
                     count: 2,
